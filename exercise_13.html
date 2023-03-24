@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let nums = [1,5,-2,4,3,5,0];
+
+        function findMax(array){
+            let max = nums[0];
+
+            array.forEach(function(num) {
+                if(num > max){
+                    max = num;
+                }
+            });
+
+            console.log('max num: ',max);
+        };
+
+        function findMin(array){
+            let min = array[0];
+
+            array.forEach(function(num) {
+                if(num < min){
+                    min = num;
+                }
+            });
+            console.log('Min Num: ',min);
+        };
+
+        findMax(nums);
+        findMin(nums);
+
+
+
+    </script>
+
+</body>
+</html>

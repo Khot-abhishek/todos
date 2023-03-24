@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str_array = ['mystr','yourstr','theirstr'];
+        function toUpper(array){
+            let result = []
+
+            array.forEach( function(str){
+                result.push(str.toUpperCase());
+           });
+
+           console.log(result);
+
+        };
+       
+        toUpper(str_array);
+
+        // second task create a function to output the given array elements twice
+
+        function arrayDouble(array){
+            let result2 = []
+
+            array.forEach(function (value){
+                result2.push(value);
+                result2.push(value);
+            });
+
+            console.log('Double_array: ', result2);
+        };
+        arrayDouble(str_array);
+
+        // Third task , create array-sum function to output the total sum of array values
+
+        nums = [1,2,3,4,5];
+
+        function arraySum(array){
+            let total = 0;
+
+            array.forEach( function(val){
+                total = total + val;
+            });
+
+            console.log('total: ',total);
+        };
+        arraySum(nums);
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

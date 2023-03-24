@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Your Receipt</h3>
+    <div id="receipt"></div>
+    <script>
+        let cartArray = [
+            {name:'Apple',price:4, quantity:2},
+            {name:'Orange',price:3, quantity:3},
+        ];
+
+        function cartTotal(items){
+            let total = 0;
+
+            items.forEach(function(item) {
+                total = total + (item.price * item.quantity);
+            });
+            console.log('Cart Value: ',total);
+        };
+        cartTotal(cartArray);
+
+        // second task to create A function to display the user recipt
+        let receipt_div = document.getElementById('receipt');
+        function displayReceipt(items){
+            let total_cost = 0;
+            items.forEach(function(item) {
+                let cost = item.price * item.quantity;
+                total_cost = total_cost + cost;
+                display_text = item.name + ' $' + item.price + ' * '+ item.quantity  + ' =  $' + cost ;  
+                
+                let element = document.createElement('div');
+                element.innerText = display_text;
+                receipt_div.appendChild(element);
+            });
+
+            let element = document.createElement('hr');
+            receipt_div.appendChild(element);
+            element = document.createElement('div');
+            display_text = 'Cart Total = $' + total_cost;
+            element.innerText = display_text;
+            receipt_div.appendChild(element);
+
+        };
+
+        displayReceipt(cartArray);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="todo-button" onclick="changebtn()" >Click me</button>
+    
+    <h4>second task</h4>
+    <div id="counter">0</div>
+    <button onclick="Increase()" >Up</button>
+
+    <h4>Third Task</h4>
+    <div id="counter1">0</div>
+    <button onclick="Increase1()" >Up</button>
+    <button onclick="Decrease1()" >Down</button>
+
+    <h4>Fourth Task</h4>
+    <input type="text" id="todo-title">
+    <button onclick="AddTodo()" >Add Todo</button>
+
+    <script>
+        // first task change the content of button when clicked
+        function changebtn(){
+            let button = document.getElementById('todo-button');
+            button.innerText = 'Done'; 
+        };
+        
+        // second func to increase the counter value when 'Up' button clicked
+        let count = 0;
+        function Increase(){
+            count = count + 1;
+            let element = document.getElementById('counter');
+            element.innerText = count;
+        };
+
+        // third task to make a counter with increase/decrease value button
+        let count1 = 0;
+        function Increase1(){
+            count1 = count1 + 1;
+            let element = document.getElementById('counter1');
+            element.innerText = count1;
+        };
+        function Decrease1(){
+            count1 = count1 - 1;
+            let element = document.getElementById('counter1');
+            element.innerText = count1; 
+        };
+
+        // fourth task get the input and add it to body inside a div
+        function AddTodo(){
+            let textbox = document.getElementById('todo-title');
+            let title = textbox.value;
+            let element = document.createElement('div');
+            element.innerText = title;
+            document.body.appendChild(element); 
+        };
+        
+    </script>
+</body>
+</html>
